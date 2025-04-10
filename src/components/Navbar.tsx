@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleSidebar }) => {
               Connect Wallet
             </button>
           )}
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+          <a href="https://github.com/IshitaPathak/leetcode-for-ao" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
             <Github size={20} />
           </a>
         </div>
