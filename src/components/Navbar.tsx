@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { Github, Menu, Clipboard } from 'lucide-react'; // Import Clipboard icon
+//@ts-ignore
+
 import {
   createDataItemSigner,
   dryrun,
