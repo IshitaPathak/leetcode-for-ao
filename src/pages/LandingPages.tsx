@@ -65,7 +65,7 @@ const LandingPages = () => {
                 <div className="flex items-center gap-2">
                   <Code className="h-6 w-6 text-green-500" />
                   <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-emerald-400">
-                    AO LeetCode
+                    leetcode-for-ao
                   </span>
                 </div>
               </div>
