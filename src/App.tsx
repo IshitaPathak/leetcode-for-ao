@@ -6,6 +6,7 @@ import { CodeEditor } from "./components/CodeEditor";
 import { TestRunner } from "./components/TestRunner";
 import { problems } from "./data/problems";
 import "./index.css";
+//@ts-ignore
 import {
   createDataItemSigner,
   dryrun,
