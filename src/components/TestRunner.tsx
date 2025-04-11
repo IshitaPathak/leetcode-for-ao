@@ -140,7 +140,7 @@ export const TestRunner: React.FC<TestRunnerProps> = ({ problem, userCode, onTes
 };
 
 // This is a very simple simulation for the MVP
-function simulateCodeExecution(code: string, problemId: string, example: any): boolean {
+function simulateCodeExecution(code: string, problemId: string, _: any): boolean {
   const cleanCode = code.toLowerCase();
   
   // These are very simplified checks just for demonstration purposes

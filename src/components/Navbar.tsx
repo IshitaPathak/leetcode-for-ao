@@ -1,5 +1,12 @@
+
 import React, { useState } from 'react';
 import { Github, Menu, Clipboard } from 'lucide-react'; // Import Clipboard icon
+import {
+  createDataItemSigner,
+  dryrun,
+  message,
+  result,
+} from "@permaweb/aoconnect";
 
 type NavbarProps = {
   toggleSidebar: () => void;
@@ -10,10 +17,12 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleSidebar }) => {
 
   async function connectWallet() {
     try {
+      //@ts-ignore
       if (!window.arweaveWallet) {
         alert('No Arconnect detected');
         return;
       }
+      //@ts-ignore
       await window.arweaveWallet.connect(
         ['ACCESS_ADDRESS', 'SIGN_TRANSACTION', 'ACCESS_TOKENS'],
         {
@@ -26,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ toggleSidebar }) => {
           protocol: 'https',
         }
       );
-
+     //@ts-ignore
       const walletAddress = await window.arweaveWallet.getActiveAddress();
       setWalletAddress(walletAddress);
     } catch (error) {
