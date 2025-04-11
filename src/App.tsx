@@ -14,30 +14,8 @@ import {
 } from "@permaweb/aoconnect";
 
 export function App() {
-  async function messageResult(
-    gameProcess: string,
-    tags: { name: string; value: string }[],
-    data?: any
-  ) {
-    const res = await message({
-      process: gameProcess,
-      signer: createDataItemSigner(window.arweaveWallet),
-      tags,
-      data,
-    });
-
-    let { Messages, Spawns, Output, Error } = await result({
-      message: res,
-      process: gameProcess,
-    });
-
-    console.dir(
-      { Messages, Spawns, Output, Error },
-      { depth: Infinity, colors: true }
-    );
-
-    return { Messages, Spawns, Output, Error };
-  }
+  // Divider position state (percentage width of the ProblemViewer panel)
+  const [dividerPosition, setDividerPosition] = useState(50); // Default: 50%
 
   const [selectedProblemId, setSelectedProblemId] = useState<string | null>(
     null
@@ -136,6 +114,28 @@ export function App() {
 
   const unlockedProblems = getUnlockedProblems();
 
+  // Handle mouse events for resizing
+  const handleMouseDown = (e: React.MouseEvent) => {
+    const startX = e.clientX;
+
+    const handleMouseMove = (moveEvent: MouseEvent) => {
+      const deltaX = moveEvent.clientX - startX;
+      const newDividerPosition = Math.min(
+        Math.max(dividerPosition + (deltaX / window.innerWidth) * 100, 10),
+        90
+      );
+      setDividerPosition(newDividerPosition);
+    };
+
+    const handleMouseUp = () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+  };
+
   return (
     <Layout
       sidebar={
@@ -151,14 +151,26 @@ export function App() {
       toggleSidebar={() => setShowSidebar(!showSidebar)}
     >
       {selectedProblem ? (
-        <div className="flex flex-col md:flex-row h-full">
+        <div className="flex h-full">
           {/* Problem description panel */}
-          <div className="md:w-1/2 h-full overflow-auto border-r">
+          <div
+            style={{ width: `${dividerPosition}%` }}
+            className="h-full overflow-auto border-r"
+          >
             <ProblemViewer problem={selectedProblem} />
           </div>
 
+          {/* Resizable divider */}
+          <div
+            className="w-2 bg-gray-300 cursor-col-resize"
+            onMouseDown={handleMouseDown}
+          ></div>
+
           {/* Code editor and test runner panel */}
-          <div className="md:w-1/2 h-full flex flex-col">
+          <div
+            style={{ width: `${100 - dividerPosition}%` }}
+            className="h-full flex flex-col"
+          >
             <div className="flex-1 overflow-hidden">
               <CodeEditor
                 code={getCurrentCode()}
@@ -173,16 +185,6 @@ export function App() {
                 userCode={getCurrentCode()}
                 onTestSuccess={() => {
                   markProblemAsSolved(selectedProblem.id);
-                  messageResult(
-                    "rK6rVBjETGNZOLQ6SaM0XOLrfBq6OnM5En6KlXWiuUg",
-                    [
-                      {
-                        name: "Action",
-                        value: "Submit",
-                      },
-                    ],
-                    "question completed"
-                  );
                 }}
               />
             </div>
