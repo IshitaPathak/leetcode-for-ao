@@ -12,6 +12,7 @@
   "dependencies": {
     "@permaweb/aoconnect": "^0.0.79",
     "@types/prismjs": "^1.26.5",
+    "arweave-wallet-kit": "^1.1.0",
     "lucide-react": "^0.475.0",
     "prismjs": "^1.30.0",
     "react": "^18.3.1",
