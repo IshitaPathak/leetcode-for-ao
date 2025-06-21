@@ -8,7 +8,7 @@ createRoot(document.getElementById("root")!).render(
 		config={{
 			permissions: ["ACCESS_ADDRESS", "SIGN_TRANSACTION"],
 			appInfo: {
-				name: "leetcode-for-ao",
+				name: "leetcode-for-AO",
 				logo: "https://arweave.net/jAvd7Z1CBd8gVF2D6ESj7SMCCUYxDX_z3vpp5aHdaYk",
 			},
 
