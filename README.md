@@ -1,6 +1,6 @@
 # leetcode-for-ao
 
-leetcode-for-ao is a platform designed to help you level up your coding skills by solving diverse programming problems. This project is built using React, TypeScript, and TailwindCSS, and is powered by Vite for fast development.
+leetcode-for-ao is platform designed to help you level up your coding skills by solving diverse programming problems. This project is built using React, TypeScript, and TailwindCSS, and is powered by Vite for fast development.
 
 ## Folder Structure
 
