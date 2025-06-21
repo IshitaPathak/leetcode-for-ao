@@ -7,7 +7,7 @@ export function App() {
 	return (
 		<Router>
 			<Routes>
-				{/* Route for the landing page */}
+				{/* Route for the landing page testing docify */}
 				<Route path="/" element={<LandingPage />} />
 
 				{/* Route for the problem-solving interface */}
