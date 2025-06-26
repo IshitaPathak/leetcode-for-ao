@@ -14,7 +14,7 @@ const LandingPages = () => {
 		link.rel = "stylesheet";
 		document.head.appendChild(link);
 
-		// Handle scroll for navbar
+		// Handle scroll for navba
 		const handleScroll = () => {
 			const offset = window.scrollY;
 			setScrolled(offset > 50);
