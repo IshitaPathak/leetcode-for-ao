@@ -27,7 +27,7 @@ const LandingPages = () => {
 				y: e.clientY / window.innerHeight,
 			});
 		};
-
+// testing tweeti 
 		window.addEventListener("scroll", handleScroll);
 		window.addEventListener("mousemove", handleMouseMove);
 
