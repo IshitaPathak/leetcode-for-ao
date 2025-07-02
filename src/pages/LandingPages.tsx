@@ -27,7 +27,7 @@ const LandingPages = () => {
 				y: e.clientY / window.innerHeight,
 			});
 		};
-// testing tweeti 
+// testing tweeti from future
 		window.addEventListener("scroll", handleScroll);
 		window.addEventListener("mousemove", handleMouseMove);
 
@@ -36,7 +36,7 @@ const LandingPages = () => {
 			window.removeEventListener("mousemove", handleMouseMove);
 		};
 	}, []);
-
+// testing tweeti 
 	// Function to scroll to a specific section
 	const scrollToSection = (id: string) => {
 		const section = document.getElementById(id);
