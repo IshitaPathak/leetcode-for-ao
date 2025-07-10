@@ -19,7 +19,7 @@ const LandingPages = () => {
 			const offset = window.scrollY;
 			setScrolled(offset > 50);
 		};
-
+// test
 		// Handle mouse movement for parallax effect
 		const handleMouseMove = (e: MouseEvent) => {
 			setMousePosition({
