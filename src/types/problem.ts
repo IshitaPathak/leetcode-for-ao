@@ -4,6 +4,17 @@ export type Example = {
   explanation?: string;
 };
 
+// export type Problem = {
+//   id: string;
+//   title: string;
+//   difficulty: string;
+//   description: string;
+//   examples: Example[];
+//   constraints: string[];
+//   defaultCode: string;
+//   codeLanguage?: string;
+// };
+
 export type Problem = {
   id: string;
   title: string;
