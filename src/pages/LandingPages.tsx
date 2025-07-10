@@ -19,7 +19,7 @@ const LandingPages = () => {
 			const offset = window.scrollY;
 			setScrolled(offset > 50);
 		};
-// test
+// testttng
 		// Handle mouse movement for parallax effect
 		const handleMouseMove = (e: MouseEvent) => {
 			setMousePosition({
@@ -57,7 +57,7 @@ const LandingPages = () => {
 						? "bg-gray-900/95 backdrop-blur-sm shadow-lg"
 						: "bg-transparent"
 				}`}
-			>
+			> 
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex items-center justify-between h-16">
 						<div className="flex items-center">
