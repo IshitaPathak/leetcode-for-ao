@@ -9,7 +9,7 @@ type ProblemListProps = {
 	solvedProblems: string[];
 	unlockedProblems: string[];
 };
-//tsetingggggggggggg
+//tsetinggggggggggggggg
 export const ProblemList: React.FC<ProblemListProps> = ({
 	problems,
 	selectedProblemId,
